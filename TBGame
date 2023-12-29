@@ -1,0 +1,126 @@
+package game;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Random;
+import java.util.Scanner;
+
+public class TBGame {
+    private List<Character> characters;
+    private List<Opponent> opponents;
+    private Queue<Turn> turnOrder;
+
+    public TBGame() {
+        characters = new ArrayList<>();
+        opponents = new ArrayList<>();
+        turnOrder = new LinkedList<>();
+    }
+
+    public void initializeGame() {
+        // Initialize characters and opponents here
+        // ...
+
+        // Initialize turn order based on speed stat
+        initializeTurnOrder();
+    }
+
+    private void initializeTurnOrder() {
+    }
+
+    public void playGame() {
+        while (!isGameOver()) {
+            takeTurn();
+        }
+
+        displayGameResult();
+    }
+
+    private void takeTurn() {
+    }
+
+    private boolean isGameOver() {
+    }
+
+    private void displayGameResult() {
+    }
+
+
+    private static class Turn {
+        private String owner;
+        private int attackModifier;
+
+        public Turn(String owner, int attackModifier) {
+            this.owner = owner;
+            this.attackModifier = attackModifier;
+        }
+
+    }
+
+    public static void main(String[] args) {
+        TBGame game = new TBGame();
+        game.initializeGame();
+        game.playGame();
+  
+        private static class Menu {
+            private Scanner scanner;
+
+            private class Menu {
+                private Scanner scanner;
+
+                public Menu() {
+                    this.scanner = new Scanner(System.in);
+                }
+
+                public int promptForCharacterCount() {
+                    System.out.print("Please enter the number of characters to create: ");
+                    return scanner.nextInt();
+                }
+
+                public void displayCharacterStats(Character character) {
+                    System.out.println("Character Stats: " + character.toString());
+                }
+
+                public int promptForAction() {
+                    System.out.println("[1] Attack");
+                    System.out.println("[2] Guard");
+                    System.out.println("[3] Special Action");
+                    System.out.println("[4] Run");
+                    
+                    System.out.print("Please select an option: ");
+                    return scanner.nextInt();
+                }
+
+                public int promptForWeaponAttackType() {
+                    System.out.println("[1] Slash");
+                    System.out.println("[2] Stab");
+                    
+                    System.out.print("Please select weapon attack type: ");
+                    return scanner.nextInt();
+                }
+
+                public int promptForOpponentId() {
+                    System.out.print("Please enter the opponent id: ");
+                    return scanner.nextInt();
+                }
+
+                // Other menu-related methods...
+
+                public void closeScanner() {
+                    scanner.close();
+                }
+            }
+        }
+
+        // Other TBGame class members...
+
+        public static void main(String[] args) {
+            // Main method to start the game
+            TBGame game = new TBGame();
+            game.initializeGame();
+            game.playGame();
+        }
+    }
+
+}
